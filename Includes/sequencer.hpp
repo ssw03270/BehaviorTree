@@ -1,15 +1,19 @@
-#ifndef __SEQUENCER__
-#define __SEQUENCER__
+#pragma once
+#ifndef SEQUENCER
+#define SEQUENCER
 
-#include<node.hpp>
-#include<vector>
+#include<composite_node.hpp>
 
-class Sequencer : public Node {
-private:
-	std::vector<Node> children;
-
+class Sequencer : public CompostieNode {
 public:
-	Sequencer(std::string _taskType, std::vector<Node> _children);
+	virtual bool Invoke() override {
+		for (const auto& node : getChildren()) {
+			if (!node->Invoke()) {
+				return false;
+			}
+		}
+		return true;
+	}
 };
 
-#endif // !__SEQUENCER__
+#endif // !SEQUENCER

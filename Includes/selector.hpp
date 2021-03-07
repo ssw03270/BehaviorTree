@@ -1,15 +1,19 @@
-#ifndef __SELECTOR__
-#define __SELECTOR__
+#pragma once
+#ifndef SEQUENCE
+#define SEQUENCE
 
-#include<node.hpp>
-#include<vector>
+#include<composite_node.hpp>
 
-class Selector : public Node {
-private:
-	std::vector<Node> children;
-
+class Sequence : public CompostieNode {
 public:
-	Selector(std::string _taskType, std::vector<Node> _children);
+	virtual bool Invoke() override {
+		for (const auto& node : getChildren()) {
+			if (node->Invoke()) {
+				return true;
+			}
+		}
+		return false;
+	}
 };
 
-#endif // !__SELECTOR__
+#endif // !SEQUENCE

@@ -1,16 +1,10 @@
-#ifndef __NODE__
-#define __NODE__
-
-#include<string>
+#pragma once
+#ifndef NODE
+#define NODE
 
 class Node {
-private:
-	std::string taskType;
-	bool returnValue;
 public:
-	Node();
-	Node(std::string _taskTyp);
-	bool getValue();
+	virtual bool Invoke() = 0;
 };
 
-#endif // !__NODE__
+#endif // !NODE
