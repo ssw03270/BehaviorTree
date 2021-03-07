@@ -10,7 +10,7 @@ public:
 		mFunction = function;
 	}
 	virtual bool Invoke() override {
-		return mFunction;
+		return mFunction();
 	}
 private:
 	bool (*mFunction)();

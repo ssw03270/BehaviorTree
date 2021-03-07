@@ -18,6 +18,16 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Includes\action.hpp" />
+    <ClInclude Include="..\Includes\composite_node.hpp" />
+    <ClInclude Include="..\Includes\node.hpp" />
+    <ClInclude Include="..\Includes\selector.hpp" />
+    <ClInclude Include="..\Includes\sequencer.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -79,6 +89,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <ReferencePath>$(ReferencePath)</ReferencePath>
+    <IncludePath>C:\Users\ttd85\Documents\GitHub\BehaviorTree\Includes;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -139,23 +151,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\Sources\action.cpp" />
-    <ClCompile Include="..\Sources\decorator.cpp" />
-    <ClCompile Include="..\Sources\main.cpp" />
-    <ClCompile Include="..\Sources\node.cpp" />
-    <ClCompile Include="..\Sources\selector.cpp" />
-    <ClCompile Include="..\Sources\sequencer.cpp" />
-    <ClCompile Include="..\Sources\tree.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\Includes\action.hpp" />
-    <ClInclude Include="..\Includes\decorator.hpp" />
-    <ClInclude Include="..\Includes\node.hpp" />
-    <ClInclude Include="..\Includes\selector.hpp" />
-    <ClInclude Include="..\Includes\sequencer.hpp" />
-    <ClInclude Include="..\Includes\tree.hpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
