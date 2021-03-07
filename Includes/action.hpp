@@ -6,14 +6,14 @@
 
 class Action : public Node {
 public:
-	Action(void (*function)()) {
+	Action(bool (*function)()) {
 		mFunction = function;
 	}
 	virtual bool Invoke() override {
 		return mFunction;
 	}
 private:
-	void (*mFunction)();
+	bool (*mFunction)();
 };
 
 #endif // !ACTION
