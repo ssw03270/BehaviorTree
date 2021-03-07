@@ -1,10 +1,10 @@
 #pragma once
-#ifndef SEQUENCE
-#define SEQUENCE
+#ifndef SELECTOR
+#define SELECTOR
 
 #include<composite_node.hpp>
 
-class Sequence : public CompostieNode {
+class Selector : public CompostieNode {
 public:
 	virtual bool Invoke() override {
 		for (const auto& node : getChildren()) {
@@ -16,4 +16,4 @@ public:
 	}
 };
 
-#endif // !SEQUENCE
+#endif // !SELECTOR
